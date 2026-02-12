@@ -3,48 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de Afazeres</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <header>
+        <h1>Lista de Afazeres</h1>
+    </header>
 
+    <main>
 
-    <center>
-    <h1>Lista de afazeres</h1>
-    
-    <div id="pae">
-        <fieldset id="cobre">
-            <div id="ferro">
-                <p>Coisas a fazer</p>
-                <ul id="listaA">
-                   
-                </ul>
+        <section id="pae">
+
+            <!-- LISTA A -->
+            <fieldset class="bloco">
+                <legend>Coisas a fazer</legend>
+
+                <ul id="listaA"></ul>
+
                 <input type="text" id="inputA" placeholder="Digite um item para a Lista A">
-                <button onclick="adicionarItem('A')">Adicionar à Lista A</button>
-            </div>
-        </fieldset>
+                <button onclick="adicionarItem('A')">
+                    Adicionar à Lista A
+                </button>
+            </fieldset>
 
-        <fieldset id="cobre">
-            <div id="ouro">
-                <p>Coisas feitas</p>
-                <ul id="listaB">
-                  
-                </ul>
+            <!-- LISTA B -->
+            <fieldset class="bloco">
+                <legend>Coisas feitas</legend>
+
+                <ul id="listaB"></ul>
+
                 <input type="text" id="inputB" placeholder="Digite um item para a Lista B">
-                <button onclick="adicionarItem('B')">Adicionar à Lista B</button>
-            </div>
-        </fieldset>
+                <button onclick="adicionarItem('B')">
+                    Adicionar à Lista B
+                </button>
+            </fieldset>
 
-    </div>
-    
-        <div id="interacao">
+        </section>
+
+        <section id="interacao">
             <button onclick="mudarLista()">Mudar de lista</button>
-            <button onclick="selecionarLista('A')">Selecione da Lista A</button>
-            <button onclick="selecionarLista('B')">Selecione da Lista B</button>
-        </div>
-    
+            <button onclick="selecionarLista('A')">Selecionar da Lista A</button>
+            <button onclick="selecionarLista('B')">Selecionar da Lista B</button>
+        </section>
+
+    </main>
 
     <script src="main.js"></script>
+
 </body>
 </html>

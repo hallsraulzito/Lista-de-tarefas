@@ -53,7 +53,7 @@ body {
 
 /* TÍTULO DO CARD */
 .card h2 {
-    margin-bottom: 15px;
+    margin-top: 15px;
     font-size: 1.4rem;
 }
 
@@ -144,4 +144,5 @@ button:hover {
         max-width: 300px;
     }
 }
+
 

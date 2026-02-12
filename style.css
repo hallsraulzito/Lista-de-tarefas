@@ -1,108 +1,122 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
 body {
-    background-color: darkgray;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    min-height: 100vh;
+    padding: 20px;
 }
 
-p {
-    font-size: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: blue;
-    background-color: aqua;
-    width: 350px;
+/* TÍTULO */
+header h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
 }
 
-#cobre {
-    border: solid 3px black;
-    width: 20px;
-}
-
+/* CONTAINER DAS LISTAS */
 #pae {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
-#ferro {
-    padding-left: 3px;
+/* CADA BLOCO (LISTA) */
+.bloco {
+    background-color: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-#carvao {
-    border: solid 3px black;
-    margin-top: 20px;
-    width: 300px;
+/* TÍTULO DO FIELDSET */
+legend {
+    font-weight: bold;
+    font-size: 1.3rem;
 }
 
-h1 {
-    font-size: 50px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
-    color: white;
+/* LISTA */
+ul {
+    list-style: none;
+    min-height: 50px;
 }
 
+/* ITENS DA LISTA */
+li {
+    background-color: #f8f9fc;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+/* INPUT */
 input {
-    font-size: 30px;
-    width: 500px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
 }
 
+/* BOTÕES */
 button {
-    font-size: 20px;
-}
-
-#b1 {
-    height: 40px;
-}
-
-#interacao{
-    margin-top: 20px;
-}
-
-@media screen and (max-width: 720px) and (max-height: 1280px){
-    body {
-        background-color: darkgray;
-    }
-    
-    p {
-        font-size: 4px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        color: blue;
-        background-color: aqua;
-        width: 50px;
-    }
-    
-    #cobre {
-        border: solid 2px black;
-    }
-    
-    #pae {
-        display: flex;
-    }
-    
-   
-    
-    #ferro {
-        padding-left: 1px;
-    }
-    
-    #carvao {
-        border: solid 1px black;
-        margin-top: 8px;
-        width: 250px;
-    }
-
-    h1{
-    font-size: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #4e73df;
     color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #2e59d9;
+    transform: scale(1.03);
+}
+
+/* ÁREA DE INTERAÇÃO */
+#interacao {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 1.8rem;
     }
 
-    input {
-        font-size: 20px;
+    .bloco {
+        max-width: 100%;
     }
-    
+
+    #interacao {
+        flex-direction: column;
+        align-items: center;
+    }
+
     button {
-        font-size: 15px;
+        width: 100%;
+        max-width: 300px;
     }
 
-    #interacao{
-        margin-top: 20px;
-    }
 }

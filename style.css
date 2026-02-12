@@ -10,73 +10,89 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(135deg, #4e73df, #1cc88a);
     min-height: 100vh;
-    padding: 20px;
-}
-
-/* TÍTULO */
-header h1 {
-    text-align: center;
-    color: white;
-    margin-bottom: 30px;
-    font-size: 2.5rem;
-}
-
-/* CONTAINER DAS LISTAS */
-#pae {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-}
-
-/* CADA BLOCO (LISTA) */
-.bloco {
-    background-color: white;
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    padding: 30px 15px;
 }
 
-/* TÍTULO DO FIELDSET */
-legend {
-    font-weight: bold;
-    font-size: 1.3rem;
+/* HEADER */
+.header h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* LISTAS */
+.listas {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    width: 100%;
+    max-width: 350px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+/* TÍTULO DO CARD */
+.card h2 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
 }
 
 /* LISTA */
 ul {
     list-style: none;
+    margin-bottom: 15px;
     min-height: 50px;
 }
 
-/* ITENS DA LISTA */
+/* ITEM */
 li {
     background-color: #f8f9fc;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+li:hover {
+    background-color: #e2e6f5;
+}
+
+/* INPUT + BOTÃO */
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
     padding: 8px;
     border-radius: 8px;
-    margin-bottom: 8px;
-    font-size: 1rem;
-}
-
-/* INPUT */
-input {
-    padding: 10px;
-    font-size: 1rem;
-    border-radius: 8px;
     border: 1px solid #ccc;
-    width: 100%;
 }
 
-/* BOTÕES */
 button {
-    padding: 10px;
-    font-size: 1rem;
+    padding: 8px 12px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
@@ -87,42 +103,45 @@ button {
 
 button:hover {
     background-color: #2e59d9;
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
-/* ÁREA DE INTERAÇÃO */
-#interacao {
+/* ÁREA DE AÇÕES */
+.acoes {
     display: flex;
     justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
 }
 
-/* RESPONSIVIDADE */
+/* RESPONSIVO */
 @media (max-width: 768px) {
 
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    #pae {
+    .listas {
         flex-direction: column;
         align-items: center;
     }
 
-    .bloco {
-        max-width: 280px; /* menor no celular */
-    }
-
-    #interacao {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    button {
-        width: 100%;
+    .card {
         max-width: 300px;
     }
 
+    .input-group {
+        flex-direction: column;
+    }
+
+    .input-group button {
+        width: 100%;
+    }
+
+    .acoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .acoes button {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 

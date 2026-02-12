@@ -8,51 +8,51 @@
 </head>
 <body>
 
-    <header>
+    <header class="header">
         <h1>Lista de Afazeres</h1>
     </header>
 
-    <main>
+    <main class="container">
 
-        <section id="pae">
+        <!-- LISTAS -->
+        <section class="listas">
 
-            <!-- LISTA A -->
-            <fieldset class="bloco">
-                <legend>Coisas a fazer</legend>
+            <!-- Lista A -->
+            <div class="card">
+                <h2>Coisas a Fazer</h2>
 
                 <ul id="listaA"></ul>
 
-                <input type="text" id="inputA" placeholder="Digite um item para a Lista A">
-                <button onclick="adicionarItem('A')">
-                    Adicionar à Lista A
-                </button>
-            </fieldset>
+                <div class="input-group">
+                    <input type="text" id="inputA" placeholder="Digite um item...">
+                    <button onclick="adicionarItem('A')">Adicionar</button>
+                </div>
+            </div>
 
-            <!-- LISTA B -->
-            <fieldset class="bloco">
-                <legend>Coisas feitas</legend>
+            <!-- Lista B -->
+            <div class="card">
+                <h2>Coisas Feitas</h2>
 
                 <ul id="listaB"></ul>
 
-                <input type="text" id="inputB" placeholder="Digite um item para a Lista B">
-                <button onclick="adicionarItem('B')">
-                    Adicionar à Lista B
-                </button>
-            </fieldset>
+                <div class="input-group">
+                    <input type="text" id="inputB" placeholder="Digite um item...">
+                    <button onclick="adicionarItem('B')">Adicionar</button>
+                </div>
+            </div>
 
         </section>
 
-        <section id="interacao">
-            <button onclick="mudarLista()">Mudar de lista</button>
-            <button onclick="removerLista()">Remover da lista</button>
-            <button onclick="selecionarLista('A')">Selecionar da Lista A</button>
-            <button onclick="selecionarLista('B')">Selecionar da Lista B</button>
+        <!-- BOTÕES DE INTERAÇÃO -->
+        <section class="acoes">
+            <button onclick="mudarLista()">Mover Item</button>
+            <button onclick="selecionarLista('A')">Selecionar Lista A</button>
+            <button onclick="selecionarLista('B')">Selecionar Lista B</button>
+            <button onclick="removerLista()">Remover Item</button>
         </section>
 
     </main>
 
     <script src="main.js"></script>
-
 </body>
 </html>
-

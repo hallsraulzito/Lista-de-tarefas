@@ -28,24 +28,25 @@ function adicionarItem(lista) {
 
 
 function selecionarLista(lista) {
-    let listaSelecionada;
-    
-    if (lista === 'A') {
-        listaSelecionada = document.getElementById('listaA');
-    } else if (lista === 'B') {
-        listaSelecionada = document.getElementById('listaB');
-    }
 
-    
+    const listaSelecionada = document.getElementById(`lista${lista}`);
     const itens = listaSelecionada.getElementsByTagName('li');
+
     for (let item of itens) {
-        item.style.backgroundColor = '';  
+
         item.onclick = function() {
-            itemSelecionado = item;  
-            item.style.backgroundColor = 'lightblue';  
+
+            // limpa seleção anterior
+            if (itemSelecionado) {
+                itemSelecionado.style.backgroundColor = "";
+            }
+
+            itemSelecionado = item;
+            item.style.backgroundColor = "lightblue";
         };
     }
 }
+
 
 
 function mudarLista() {
@@ -104,10 +105,16 @@ window.onload = function() {
 
 function adicionarItemCarregado(lista, valor) {
     const listaElement = document.getElementById(`lista${lista}`);
+    
     const novoElemento = document.createElement('li');
-    novoElemento.textContent = valor;
+    const novoParagrafo = document.createElement('p');
+    novoParagrafo.textContent = valor;
+
+    novoElemento.appendChild(novoParagrafo);
+
     listaElement.appendChild(novoElemento);
 }
+
 
 function removerLista(){
 
@@ -116,12 +123,9 @@ function removerLista(){
         return;
     }
 
-    // Remove o item da lista
-    itemSelecionado.parentElement.removeChild(itemSelecionado);
+    itemSelecionado.remove(); // mais simples e moderno
 
-    // Limpa a variável
     itemSelecionado = null;
 
-    // Atualiza o localStorage
     salvarListas();
 }

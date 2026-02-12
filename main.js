@@ -108,3 +108,20 @@ function adicionarItemCarregado(lista, valor) {
     novoElemento.textContent = valor;
     listaElement.appendChild(novoElemento);
 }
+
+function removerLista(){
+
+    if (!itemSelecionado) {
+        alert("Selecione um item para remover.");
+        return;
+    }
+
+    // Remove o item da lista
+    itemSelecionado.parentElement.removeChild(itemSelecionado);
+
+    // Limpa a variável
+    itemSelecionado = null;
+
+    // Atualiza o localStorage
+    salvarListas();
+}
